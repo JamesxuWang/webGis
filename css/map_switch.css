@@ -1,0 +1,51 @@
+.fun {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  z-index: 99
+}
+.switch li {
+  height: 60px;
+  width: 60px;
+  display: block;
+  float: left;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.vecMap {
+  background: url(../images/mapswitch_0.png);
+}
+.imgMap {
+  background: url(../images/mapswitch_1.png);
+}
+.vecMap span, .imgMap span {
+  display: block;
+  float: left;
+  height: 20px;
+  background: #5c99e8;
+  width: 60px;
+  text-align: center;
+  line-height: 20px;
+  margin-top: 40px;
+  color: #FFF
+}
+.left-mapswitch_0 {
+  background: url(../images/mapswitch_0.png);
+}
+.left-mapswitch_1 {
+  background: url(../images/mapswitch_1.png);
+}
+#switchBaseMap {
+  position: fixed;
+  right: 10px;
+  height: 160px;
+}
+#switchBaseMap li {
+  list-style-type: none;
+  display: inline-block;
+  cursor: pointer;
+  width: 51px;
+  height: 50px;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+}

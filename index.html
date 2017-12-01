@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>园区招商管理系统</title>
+  <link type="text/css" rel="stylesheet" href="js/lib/layui/css/layui.css" >
+  <link type="text/css" rel="stylesheet" href="/arcgis_js_api/library/3.14/3.14/esri/css/esri.css" />
+  <link type="text/css" rel="stylesheet" href="css/comment.css" />
+  <link type="text/css" rel="stylesheet" href="css/layout.css" />
+  <link type="text/css" rel="stylesheet" href="css/map_switch.css" />
+</head>
+
+<body class="layui-layout-body">
+  <div class="layui-layout layui-layout-admin">
+  <div class="layui-header layui-bg-blue">
+    <div class="layui-logo">LOGO</div>
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item">
+        <a href="javascript:;">园区土地</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">地块指标统计</a></dd>
+          <dd><a href="">地块指标一览</a></dd>
+          <dd><a href="">园区人口分析</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">企业分析</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">企业一览</a></dd>
+          <dd><a href="">人才一览</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">选址参考</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">周边环境参考</a></dd>
+          <dd><a href="">产业链参考</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">园区展示</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">重点项目展示</a></dd>
+          <dd><a href="">多媒体展示</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="javascript:;">文件查阅</a></li>
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="images/headbg.png" class="layui-nav-img">
+          ADMIN
+        </a>
+        <!-- <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl> -->
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <!-- 除了地图 -->
+    <div class="map-else" id="mapElse">
+      <div class="left-top-side left-side">        
+        <div class="side-title">
+          <div class="side-title-name">地块指标统计</div>
+          <!-- <div class="layui-layout-right side-title-toleft">
+             <i class="layui-icon">&#xe60f;</i>   
+          </div> -->
+        </div>
+        <div class="side-content"></div>
+      </div>
+      <a class="slideIocn" id="mapElseSlideBtn">«</a>
+
+      <!-- <div class="left-bottom-side left-side">        
+        <div class="side-title">
+          <div class="side-title-name">图例</div>
+          <div class="layui-layout-right side-title-toleft">
+             <i class="layui-icon">&#xe60f;</i>   
+          </div>
+        </div>
+        <div class="side-content"></div>
+      </div> -->
+    </div>
+
+    <!-- 地图 -->
+    <div id="mapDiv" class="map-div">
+
+      <!-- 地图切换 -->
+      <div class="fun">
+        <ul class="switch" id="switchBaseMap">
+          <li class="vecMap"></li>
+          <li class="imgMap"></li>
+        </ul>
+      </div>
+       <!--地图工具-->
+      <div id="toolMap" class="map-tool">
+          <ul>
+              <!-- <li id="layerCtroll" class="layer-ctroll">图层</li> -->
+              <li id="fangda" class="fangda" title="放大"></li>
+              <li id="suoxiao" class="suoxiao" title="缩小"></li>
+              <li id="distance" class="distance" title="测距"></li>
+              <li id="area" class="area" title="测面"></li>
+          </ul>
+      </div>
+      <!--版权-->
+      <div id="copyrightDiv" class="map-copyright"></div>
+    </div>
+    <!-- 标注容器 -->
+    <!-- <div class="drawEmergency" id="drawEmergency">
+      <div class="list project">
+        <h2>标注</h2>
+        <span class='clear'></span>
+        <span class='back'></span>
+      </div>
+      <div class="list color">
+        <span>颜色：</span>
+        <a class='red erem-active' color='222,11,11' img='flagr'></a>
+        <a class='greed' color='72,163,111' img='flag'></a>
+        <a class='yellow' color='225,181,83' img='flagy'></a>
+      </div>
+      <div class="list">
+        <ul>
+          <li class="Draw flag" name='POINT'></li>
+          <li class="Draw line" name='LINE'></li>
+          <li class="Draw circle" name='CIRCLE'></li>
+          <li class="Draw polygon" name='POLYGON'></li>
+          <li class="Draw arrow" name='ARROW'></li>
+          <li id="tailedsquadcombat" class="tatled" name="TAILED"></li>
+          <li class="Draw text" name="TEXT"></li>
+        </ul>
+      </div> 
+      <div class="list">
+        <span>文本：</span>
+        <input type="text" id="content" class="content" />
+      </div>-->
+    </div> 
+  </div>
+  <script type="text/javascript">
+    var projectLocation = location.pathname.replace(/[^\/]+$/, '');
+    dojoConfig = {
+      serverIp: location.host,
+      parseOnLoad: true,
+      async: true,
+      packages: [{
+        name: 'modules',
+        location: projectLocation + 'js/modules'
+      }
+      ,{
+        name: "config",
+        location: projectLocation + 'js/config'
+      }
+      ,{
+        name: "lib",
+        location: projectLocation + 'js/lib'
+      }
+      ,{
+        name: "echo",
+        location: "/echo/src/echo"
+      }
+      ,{
+        // 3.0
+        name: "echarts",
+        location: projectLocation + 'js/lib/echarts',
+        main: "echarts.min"
+      }]
+    };
+  </script>
+
+  <script type="text/javascript" src="/arcgis_js_api/library/3.14/3.14/init.js"></script>
+  <script type="text/javascript" src="js/lib/jquery/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="js/lib/layui/layui.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

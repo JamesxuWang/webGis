@@ -1,0 +1,292 @@
+/*首页样式*/
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    font-family: "微软雅黑";
+}
+
+
+
+/*头部*/
+
+.layui-layout-admin .layui-logo {
+    color: #fff;
+    width: 300px;
+}
+
+.layui-layout-admin .layui-header {
+    background-color: #2EA6DA;
+    background: url(../images/headdbg.png) no-repeat;
+}
+.layui-layout-admin .layui-header .layui-layout-left  {
+    left: 372px;
+}
+
+.layui-nav .layui-this:after,
+.layui-nav-bar,
+.layui-nav-tree .layui-nav-itemed:after {
+    background-color: #efeb6d;
+}
+
+
+
+/*容器*/
+
+.container {
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+}
+
+.container .map-div {
+    position: absolute;
+    left: 340px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    height: 100%;
+}
+.esriOverviewMap.ovwBR .ovwContainer {
+    bottom: 0px;
+    right: 0px;
+    border-top: 1px solid #f5f5f5;
+    border-left: 1px solid #f5f5f5;
+    padding-top: 2px;
+    padding-left: 2px;
+}
+.esriOverviewMap .ovwContainer {
+    position: absolute;
+    display: none;
+    background-color: #f5f5f5;
+}
+
+/*.container .map-else{
+    position: relative;   
+}*/
+
+.container .map-else {
+    display: block;
+    font-size: 14px;
+    width: 340px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    padding: 10px 20px;
+    z-index: 999;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+    border: 1px solid #DDD;
+}
+
+
+/*.container .map-else>div{ 
+    background: #FFF;
+    position: absolute;
+}*/
+
+
+/*通用左栏*/
+
+.container .side-title {
+    border-bottom: 1px solid #2888d7;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.side-title-text {
+    margin-left: 10px;
+}
+
+.container .side-title .side-title-name {
+    /*margin-left: 10px;*/
+    display: inline-block;
+    padding: 0 30px;
+    background: #2888d7;
+}
+
+.container .side-title .side-title-toleft {
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.side-title-toleft .layui-icon {
+    font-size: 20px;
+}
+
+.container .map-else .slideIocn {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 339px;
+    margin-top: -40px;
+    width: 30px;
+    height: 80px;
+    border-radius: 0px 5px 5px 0px;
+    border-top: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    font-size: 24px;
+    line-height: 80px;
+    text-align: center;
+    color: #1e87c8;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    z-index: 888;
+}
+
+.container .side-content {
+    width: 100%;
+    position: absolute;
+    top: 45px;
+    bottom: 0;
+}
+
+.container .left-top-side {
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+}
+
+/*地图工具*/
+
+.map-tool {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    background-color: #f5f5f5;
+    font-size: 12px;
+    box-shadow: 0 0 5px #727272;
+    padding: 3px 0px;
+    z-index: 99;
+}
+
+.map-tool ul li {
+    display: block;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 35px;
+    cursor: pointer;
+    border-bottom: 1px solid #3289d2;
+    background: url(../images/tool-icon.png) no-repeat center center;
+}
+
+.layer-ctroll {
+    /*border-top:1px solid #4fb9e5;*/
+    background: url(../images/layer-ctroll.png) no-repeat 8px 5px !important;
+}
+
+.fangda {
+    background-position: 0px -120px !important;
+}
+
+.suoxiao {
+    background-position: 0px -90px !important;
+}
+
+.distance {
+    background-position: 0px 2px !important;
+}
+
+.area {
+    border-bottom: none !important;
+    background-position: 0px -30px !important;
+}
+
+.tagging {
+    background-position: 5px -60px !important;
+}
+
+/*版权*/
+
+.map-copyright {
+    position: absolute;
+    max-height: 20px;
+    width: 350px;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -175px;
+    text-align: center;
+    padding: 5px 6px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(80, 173, 217, 0.9);
+    color: #fff;
+    font-family: Microsoft Yahei;
+    font-size: 12px;
+    cursor: default;
+    z-index: 99;
+}
+
+/*滚动条*/
+
+.scrollBox {
+    width: 8px;
+    height: 100%;
+    background-color: #DDD;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.scrollSlide {
+    display: inline-block;
+    width: 100%;
+    background-color: #66c3e9;
+    position: absolute;
+    top: 0px;
+    border-radius: 50px;
+}
+
+
+.pageCon {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-top: 1px dashed #CCC;
+}
+
+.pageCon a {
+    display: inline-block;
+    width: 20px;
+    height: 30px;
+    color: #f4a740;
+    font-size: 24px;
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+.pageCon .page {
+    margin: 0px 5px;
+}
+
+.pageCon .no {
+    color: #F7D7AD;
+}
+
+.pageCon .select-text {
+    width: 50px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0px 10px;
+    border: 1px solid #f4a740;
+}
+
+.pageCon .con {
+    position: relative;
+    top: -3px;
+}
